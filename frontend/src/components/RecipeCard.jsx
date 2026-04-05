@@ -1,18 +1,12 @@
 import { Link } from 'react-router-dom'
 import MacroBars from './MacroBars'
 
-const diffStyles = {
-  easy: 'bg-emerald-500/10 text-emerald-600 border-emerald-200',
-  medium: 'bg-amber-500/10 text-amber-600 border-amber-200',
-  hard: 'bg-rose-500/10 text-rose-600 border-rose-200',
-}
-
 export default function RecipeCard({ recipe, showMatch = false }) {
   return (
     <Link
       to={`/recipe/${recipe.id}`}
       state={{ recipe }}
-      className="glass rounded-2xl card-hover overflow-hidden flex flex-col group"
+      className="card rounded-2xl overflow-hidden flex flex-col group"
     >
       <div className="relative overflow-hidden">
         <img
@@ -22,34 +16,32 @@ export default function RecipeCard({ recipe, showMatch = false }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         {showMatch && (
-          <div className={`absolute top-3 right-3 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg ${
-            recipe.match_percentage >= 50 ? 'bg-gradient-to-r from-emerald-500 to-green-500' :
-            recipe.match_percentage > 0 ? 'bg-gradient-to-r from-amber-500 to-orange-500' :
-            'bg-gradient-to-r from-gray-500 to-gray-600'
+          <div className={`absolute top-3 right-3 text-sm font-body font-semibold px-3 py-1 rounded-full ${
+            recipe.match_percentage >= 50 ? 'bg-sand-900 text-sand-100' : 'bg-sand-300 text-sand-800'
           }`}>
-            {recipe.match_percentage}% match
+            {recipe.match_percentage}%
           </div>
         )}
-        <span className={`absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full border ${diffStyles[recipe.difficulty] || ''}`}>
+        <span className="absolute top-3 left-3 font-body text-sm font-semibold px-3 py-1 rounded-full bg-white/80 text-sand-800 capitalize">
           {recipe.difficulty}
         </span>
-        <div className="absolute bottom-3 left-3 flex items-center gap-2 text-white text-xs font-medium">
-          <span className="bg-black/40 backdrop-blur-sm px-2 py-1 rounded-full">⏱ {recipe.cook_time} min</span>
-          <span className="bg-black/40 backdrop-blur-sm px-2 py-1 rounded-full">🔥 {recipe.calories} cal</span>
+        <div className="absolute bottom-3 left-3 flex items-center gap-2 text-white font-body text-sm">
+          <span className="bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.cook_time} min</span>
+          <span className="bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full">{recipe.calories} cal</span>
         </div>
       </div>
       <div className="p-5 flex-1 flex flex-col gap-3">
-        <h3 className="font-bold text-gray-800 text-lg leading-tight">{recipe.title}</h3>
+        <h3 className="font-display font-bold text-sand-900 text-lg leading-tight">{recipe.title}</h3>
         <MacroBars protein={recipe.protein} carbs={recipe.carbs} fat={recipe.fat} />
         {showMatch && (
           <div className="mt-1 flex flex-wrap gap-1.5">
             {recipe.matched_ingredients?.map((i) => (
-              <span key={i.ingredient_id} className="text-xs bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full font-medium">
+              <span key={i.ingredient_id} className="font-body text-sm bg-sand-100 text-sand-700 border border-sand-300 px-2.5 py-0.5 rounded-full">
                 {i.ingredient_name}
               </span>
             ))}
             {recipe.missing_ingredients?.map((i) => (
-              <span key={i.ingredient_id} className="text-xs bg-rose-50 text-rose-600 border border-rose-200 px-2 py-0.5 rounded-full font-medium">
+              <span key={i.ingredient_id} className="font-body text-sm bg-sand-50 text-sand-400 border border-sand-200 px-2.5 py-0.5 rounded-full">
                 {i.ingredient_name}
               </span>
             ))}

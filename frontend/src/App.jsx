@@ -15,11 +15,15 @@ export default function App() {
   const { loading } = useAuth()
 
   if (loading) {
-    return <div className="flex items-center justify-center h-screen text-gray-400">Loading...</div>
+    return (
+      <div className="flex items-center justify-center h-screen bg-sand-200">
+        <p className="font-body text-sand-500 text-lg italic">Loading...</p>
+      </div>
+    )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-sand-200">
       <Navbar />
       <Routes>
         <Route path="/" element={<GoalSelection />} />
