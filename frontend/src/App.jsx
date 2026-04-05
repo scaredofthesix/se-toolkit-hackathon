@@ -1,5 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Landing from './pages/Landing'
 import GoalSelection from './pages/GoalSelection'
 import LevelSelection from './pages/LevelSelection'
 import IngredientInput from './pages/IngredientInput'
@@ -13,20 +14,23 @@ import { useAuth } from './context/AuthContext'
 
 export default function App() {
   const { loading } = useAuth()
+  const location = useLocation()
+  const isLanding = location.pathname === '/'
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-sand-200">
-        <p className="font-body text-sand-500 text-lg italic">Loading...</p>
+      <div className="flex items-center justify-center h-screen bg-black">
+        <p className="font-body text-white/50 text-xl italic">Loading...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-sand-200">
-      <Navbar />
+    <div className="min-h-screen bg-black text-white">
+      {!isLanding && <Navbar />}
       <Routes>
-        <Route path="/" element={<GoalSelection />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/goals" element={<GoalSelection />} />
         <Route path="/level" element={<LevelSelection />} />
         <Route path="/ingredients" element={<IngredientInput />} />
         <Route path="/results" element={<Results />} />

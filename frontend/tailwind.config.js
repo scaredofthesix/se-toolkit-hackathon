@@ -4,22 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        sand: {
-          50: '#f5f0e8',
-          100: '#ede5d8',
-          200: '#e8e2d8',
-          300: '#d4c4b5',
-          400: '#b8a999',
-          500: '#9c8e7e',
-          600: '#7a6e60',
-          700: '#5a5048',
-          800: '#3a3430',
-          900: '#1a1614',
+        dark: {
+          50: 'rgba(255,255,255,0.55)',
+          100: 'rgba(255,255,255,0.35)',
+          200: 'rgba(255,255,255,0.15)',
+          300: 'rgba(255,255,255,0.08)',
+          400: '#1a1a1a',
+          500: '#111111',
+          600: '#0d0d0d',
+          700: '#0a0a0a',
+          800: '#050505',
+          900: '#000000',
         },
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        body: ['"Cormorant Garamond"', 'serif'],
+        display: ['"Cinzel Decorative"', 'serif'],
+        body: ['"Crimson Pro"', 'Georgia', 'serif'],
       },
     },
   },
