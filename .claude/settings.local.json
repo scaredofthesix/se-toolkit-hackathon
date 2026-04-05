@@ -17,7 +17,8 @@
       "Bash(ssh:*)",
       "Bash(pip install:*)",
       "Bash(gh auth:*)",
-      "Bash(winget install:*)"
+      "Bash(winget install:*)",
+      "Bash(gh repo:*)"
     ]
   }
 }

@@ -24,7 +24,6 @@ export default function IngredientInput() {
     return () => clearTimeout(timer)
   }, [query, selected])
 
-  // Close dropdown on click outside
   useEffect(() => {
     const handler = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -62,75 +61,60 @@ export default function IngredientInput() {
     }
   }
 
-  const categoryIcons = { meat: '🥩', dairy: '🧀', vegetable: '🥬', grain: '🌾', fruit: '🍎', spice: '🧂', pantry: '🫙' }
-
   return (
-    <div className="max-w-2xl mx-auto px-6 py-20 fade-in">
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-gray-800 mb-4 leading-tight">
-          What's in your <span className="gradient-text">kitchen</span>?
+    <div className="max-w-2xl mx-auto px-8 py-24 fade-in">
+      <div className="text-center mb-14">
+        <p className="font-body italic text-sand-500 text-xl mb-3">type what you have</p>
+        <h1 className="font-display text-6xl font-bold text-sand-900 leading-tight">
+          Your <span className="italic font-normal">Kitchen</span>
         </h1>
-        <p className="text-gray-500 text-lg max-w-md mx-auto">Type ingredient names and we'll find the best recipes.</p>
       </div>
 
-      {/* Search + dropdown wrapper */}
       <div className="relative mb-4" ref={dropdownRef}>
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">🔍</div>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search ingredients... (chicken, rice, tomato)"
-          className="w-full glass-strong rounded-2xl pl-12 pr-4 py-4 text-lg focus:ring-2 focus:ring-primary-400 focus:outline-none transition shadow-sm"
+          placeholder="Search ingredients..."
+          className="w-full input-field rounded-xl px-6 py-4 font-body text-xl placeholder:text-sand-400"
         />
         {suggestions.length > 0 && (
-          <div className="absolute z-20 w-full glass-strong rounded-2xl mt-2 shadow-xl max-h-64 overflow-y-auto">
+          <div className="absolute z-20 w-full card rounded-xl mt-2 shadow-xl max-h-64 overflow-y-auto">
             {suggestions.map((s) => (
               <button
                 key={s.id}
                 onClick={() => addIngredient(s)}
-                className="w-full text-left px-5 py-3.5 hover:bg-primary-50/70 transition flex items-center justify-between first:rounded-t-2xl last:rounded-b-2xl"
+                className="w-full text-left px-6 py-3.5 hover:bg-sand-100/60 transition flex items-center justify-between font-body text-lg first:rounded-t-xl last:rounded-b-xl"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg">{categoryIcons[s.category] || '🍽'}</span>
-                  <span className="text-gray-800 font-medium">{s.name}</span>
-                </div>
-                <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">{s.category}</span>
+                <span className="text-sand-900">{s.name}</span>
+                <span className="text-sm text-sand-400 bg-sand-100 px-3 py-0.5 rounded-full">{s.category}</span>
               </button>
             ))}
           </div>
         )}
       </div>
 
-      {/* Selected ingredients */}
       {selected.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-6">
           {selected.map((s) => (
             <span
               key={s.id}
-              className="bg-gradient-to-r from-primary-50 to-emerald-50 text-primary-700 border border-primary-200 px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-sm"
+              className="bg-sand-100 text-sand-800 border border-sand-300 px-4 py-2 rounded-full font-body text-base font-semibold flex items-center gap-2"
             >
-              <span className="text-base">{categoryIcons[s.category] || '🍽'}</span>
               {s.name}
-              <button onClick={() => removeIngredient(s.id)} className="ml-1 w-5 h-5 rounded-full bg-primary-200/50 hover:bg-red-200 text-primary-600 hover:text-red-600 flex items-center justify-center transition text-xs font-bold">&times;</button>
+              <button onClick={() => removeIngredient(s.id)} className="w-5 h-5 rounded-full bg-sand-300/50 hover:bg-sand-400/50 text-sand-700 flex items-center justify-center transition text-xs font-bold">&times;</button>
             </span>
           ))}
         </div>
       )}
 
-      {/* Spacer so button is always below dropdown */}
-      <div className="mt-6">
+      <div className="mt-8">
         <button
           onClick={findRecipes}
           disabled={selected.length === 0 || loading}
-          className="w-full bg-gradient-to-r from-primary-500 to-emerald-500 text-white py-4 rounded-2xl text-lg font-bold hover:shadow-xl hover:shadow-primary-200 transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none btn-glow relative z-10"
+          className="w-full btn-primary py-4 rounded-xl font-body text-xl font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
         >
-          {loading ? (
-            <span className="flex items-center justify-center gap-2">
-              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-              Searching...
-            </span>
-          ) : `Find Recipes (${selected.length} ingredient${selected.length !== 1 ? 's' : ''})`}
+          {loading ? 'Searching...' : `Find Recipes (${selected.length})`}
         </button>
       </div>
     </div>

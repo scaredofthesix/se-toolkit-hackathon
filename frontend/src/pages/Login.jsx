@@ -21,31 +21,30 @@ export default function Login() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-6 py-20 fade-in">
-      <div className="text-center mb-8">
-        <div className="text-5xl mb-4">👋</div>
-        <h1 className="text-3xl font-extrabold text-gray-800">Welcome back</h1>
-        <p className="text-gray-500 mt-1">Sign in to your account</p>
+    <div className="max-w-md mx-auto px-8 py-24 fade-in">
+      <div className="text-center mb-10">
+        <p className="font-body italic text-sand-500 text-xl mb-3">welcome back</p>
+        <h1 className="font-display text-5xl font-bold text-sand-900">Sign In</h1>
       </div>
-      <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-5">
+      <form onSubmit={handleSubmit} className="card rounded-2xl p-8 space-y-5">
         {error && (
-          <div className="bg-rose-50 border border-rose-200 text-rose-600 px-4 py-3 rounded-xl text-sm font-medium">{error}</div>
+          <div className="bg-sand-100 border border-sand-400 text-sand-800 px-4 py-3 rounded-xl font-body text-base">{error}</div>
         )}
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email</label>
+          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Email</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
-            className="w-full bg-white/80 border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary-400 focus:border-transparent focus:outline-none transition" />
+            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
         </div>
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5">Password</label>
+          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
-            className="w-full bg-white/80 border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary-400 focus:border-transparent focus:outline-none transition" />
+            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
         </div>
-        <button type="submit" className="w-full bg-gradient-to-r from-primary-500 to-emerald-500 text-white py-3 rounded-xl font-bold hover:shadow-lg hover:shadow-primary-200 transition-all">
+        <button type="submit" className="w-full btn-primary py-3 rounded-xl font-body text-lg font-bold">
           Login
         </button>
-        <p className="text-sm text-gray-500 text-center">
-          Don't have an account? <Link to="/register" className="text-primary-600 font-semibold hover:underline">Sign up</Link>
+        <p className="font-body text-base text-sand-500 text-center">
+          Don't have an account? <Link to="/register" className="text-sand-900 font-semibold hover:underline">Sign up</Link>
         </p>
       </form>
     </div>
