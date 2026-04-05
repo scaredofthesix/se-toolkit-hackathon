@@ -4,10 +4,9 @@ Personalized recipe finder based on your nutrition goals, cooking level, and the
 
 ## Demo
 
-![Landing page](https://i.imgur.com/placeholder1.png)
-![Recipe matching](https://i.imgur.com/placeholder2.png)
-
-> Replace the placeholder links above with actual screenshots of your deployed app.
+![Landing page](docs/landing.png)
+![Ingredient search](docs/ingredients.png)
+![Recipe results](docs/results.png)
 
 ## Product Context
 
