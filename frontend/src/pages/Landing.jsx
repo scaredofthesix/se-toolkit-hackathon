@@ -57,13 +57,13 @@ export default function Landing() {
 
         {/* Text */}
         <div className="relative text-center z-10">
-          <p className="font-body italic font-light text-2xl text-white/70 mb-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
+          <p className="font-body italic font-light text-lg sm:text-2xl text-white/70 mb-4 animate-fade-up" style={{ animationDelay: '0.6s' }}>
             you are what you eat
           </p>
           <h1 className="font-display font-black text-[clamp(4rem,12vw,9rem)] leading-[0.95] tracking-tight mb-6 animate-fade-up" style={{ animationDelay: '0.9s' }}>
             WhatToEat
           </h1>
-          <p className="font-body font-light text-xl text-white/50 max-w-lg mx-auto animate-fade-up" style={{ animationDelay: '1.2s' }}>
+          <p className="font-body font-light text-base sm:text-xl text-white/50 max-w-lg mx-auto px-4 animate-fade-up" style={{ animationDelay: '1.2s' }}>
             Find the perfect recipe with what's already in your kitchen
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function Landing() {
           <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-bold mb-10 reveal">
             Food Is Everything
           </h2>
-          <p className="font-body text-2xl leading-[1.9] text-white/65 font-light reveal">
+          <p className="font-body text-lg sm:text-2xl leading-[1.9] text-white/65 font-light reveal">
             The way you eat shapes the way you feel, think, and move.
             It's not about diets or restrictions — it's about giving your body
             what it actually needs. More energy in the morning. Better sleep at night.
@@ -93,52 +93,52 @@ export default function Landing() {
 
       {/* ── HOW IT WORKS ── */}
       <section className="min-h-screen bg-black">
-        <div className="grid grid-cols-4 grid-rows-2 w-full min-h-screen">
+        <div className="grid grid-cols-2 sm:grid-cols-4 w-full min-h-screen">
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(1.5rem,3vw,3rem)] font-bold mb-2 reveal">01</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Step One</div>
             <div className="font-body text-lg text-white/65 mt-1">Choose your nutrition goal</div>
           </div>
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(1.5rem,3vw,3rem)] font-bold mb-2 reveal">02</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Step Two</div>
             <div className="font-body text-lg text-white/65 mt-1">Select your cooking level</div>
           </div>
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(1.5rem,3vw,3rem)] font-bold mb-2 reveal">03</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Step Three</div>
             <div className="font-body text-lg text-white/65 mt-1">Enter your available ingredients</div>
           </div>
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center text-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(1.5rem,3vw,3rem)] font-bold mb-2 reveal">04</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Step Four</div>
             <div className="font-body text-lg text-white/65 mt-1">Get personalized recipes</div>
           </div>
 
           {/* Row 2 */}
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(2rem,4vw,4rem)] font-bold mb-2 reveal">70</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Ingredients</div>
             <div className="font-body text-base text-white/55 mt-1">In our database</div>
           </div>
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(2rem,4vw,4rem)] font-bold mb-2 reveal">38</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Recipes</div>
             <div className="font-body text-base text-white/55 mt-1">Curated dishes</div>
           </div>
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-display text-[clamp(2rem,4vw,4rem)] font-bold mb-2 reveal">4</div>
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45">Goals</div>
             <div className="font-body text-base text-white/55 mt-1">Nutrition paths</div>
           </div>
 
-          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[50vh]">
+          <div className="border border-white/[0.07] flex flex-col justify-center items-center p-7 min-h-[30vh] sm:min-h-[50vh]">
             <div className="font-body text-xs tracking-[0.14em] uppercase text-white/45 mb-2">Track</div>
             <div className="font-body text-lg text-white/65 text-center">Calories, macros &<br/>shopping lists</div>
           </div>
