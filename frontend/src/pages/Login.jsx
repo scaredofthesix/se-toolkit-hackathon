@@ -21,29 +21,29 @@ export default function Login() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-8 py-24 fade-in">
-      <div className="text-center mb-10">
-        <p className="font-body italic text-sand-500 text-xl mb-3">welcome back</p>
-        <h1 className="font-display text-5xl font-bold text-sand-900">Sign In</h1>
+    <div className="max-w-lg mx-auto px-10 py-24 fade-in">
+      <div className="text-center mb-12">
+        <p className="font-body italic text-sand-500 text-2xl mb-4">welcome back</p>
+        <h1 className="font-display text-6xl font-bold text-sand-900">Sign In</h1>
       </div>
-      <form onSubmit={handleSubmit} className="card rounded-2xl p-8 space-y-5">
+      <form onSubmit={handleSubmit} className="card rounded-2xl p-10 space-y-6">
         {error && (
-          <div className="bg-sand-100 border border-sand-400 text-sand-800 px-4 py-3 rounded-xl font-body text-base">{error}</div>
+          <div className="bg-sand-100 border border-sand-400 text-sand-800 px-5 py-3 rounded-xl font-body text-lg">{error}</div>
         )}
         <div>
-          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Email</label>
+          <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Email</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
-            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
+            className="w-full input-field rounded-xl px-5 py-4 font-body text-xl" />
         </div>
         <div>
-          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Password</label>
+          <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
-            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
+            className="w-full input-field rounded-xl px-5 py-4 font-body text-xl" />
         </div>
-        <button type="submit" className="w-full btn-primary py-3 rounded-xl font-body text-lg font-bold">
+        <button type="submit" className="w-full btn-primary py-4 rounded-xl font-body text-xl font-bold">
           Login
         </button>
-        <p className="font-body text-base text-sand-500 text-center">
+        <p className="font-body text-lg text-sand-500 text-center">
           Don't have an account? <Link to="/register" className="text-sand-900 font-semibold hover:underline">Sign up</Link>
         </p>
       </form>

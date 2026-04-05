@@ -6,46 +6,46 @@ export default function Navbar() {
   const navigate = useNavigate()
 
   return (
-    <nav className="sticky top-0 z-50 bg-sand-200/80 backdrop-blur-md border-b border-sand-300/50">
-      <div className="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
+    <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/[0.07]">
+      <div className="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between">
         <Link to="/" className="group">
           <span className="font-display text-2xl font-bold tracking-wide">
-            What<span className="italic font-normal">To</span>Eat
+            WhatToEat
           </span>
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-8">
           {user ? (
             <>
-              <Link to="/ingredients" className="font-body text-sand-600 hover:text-sand-900 transition text-lg">
+              <Link to="/ingredients" className="font-body text-white/55 hover:text-white transition text-lg tracking-wide">
                 Recipes
               </Link>
-              <Link to="/dashboard" className="font-body text-sand-600 hover:text-sand-900 transition text-lg">
+              <Link to="/dashboard" className="font-body text-white/55 hover:text-white transition text-lg tracking-wide">
                 Dashboard
               </Link>
               {user.email === 'bodulevmax@gmail.com' && (
-                <Link to="/admin" className="font-body text-sand-600 hover:text-sand-900 transition text-lg">
+                <Link to="/admin" className="font-body text-white/55 hover:text-white transition text-lg tracking-wide">
                   Users
                 </Link>
               )}
               <div className="flex items-center gap-3 ml-2">
-                <div className="w-8 h-8 rounded-full bg-sand-800 flex items-center justify-center text-sand-100 text-sm font-display font-bold">
+                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black text-base font-display font-bold">
                   {user.name[0]}
                 </div>
-                <span className="font-body text-sand-700 text-lg">{user.name}</span>
+                <span className="font-body text-white/75 text-lg">{user.name}</span>
               </div>
               <button
                 onClick={() => { logout(); navigate('/') }}
-                className="font-body text-sand-400 hover:text-sand-800 transition text-base"
+                className="font-body text-white/30 hover:text-white/70 transition text-base"
               >
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="font-body text-sand-600 hover:text-sand-900 transition text-lg">
+              <Link to="/login" className="font-body text-white/55 hover:text-white transition text-lg tracking-wide">
                 Login
               </Link>
-              <Link to="/register" className="btn-primary px-6 py-2 rounded-full font-body text-base font-semibold">
+              <Link to="/register" className="btn-primary px-8 py-2.5 rounded-none font-body text-sm tracking-[0.12em] uppercase">
                 Sign Up
               </Link>
             </>

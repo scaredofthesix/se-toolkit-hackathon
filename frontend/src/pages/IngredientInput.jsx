@@ -62,57 +62,60 @@ export default function IngredientInput() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-8 py-24 fade-in">
-      <div className="text-center mb-14">
-        <p className="font-body italic text-sand-500 text-xl mb-3">type what you have</p>
-        <h1 className="font-display text-6xl font-bold text-sand-900 leading-tight">
-          Your <span className="italic font-normal">Kitchen</span>
+    <div className="max-w-3xl mx-auto px-10 py-24 fade-in">
+      <div className="text-center mb-16">
+        <p className="font-body italic text-white/50 text-2xl mb-4">type what you have</p>
+        <h1 className="font-display text-[clamp(3rem,6vw,5rem)] font-bold leading-tight">
+          Your Kitchen
         </h1>
       </div>
 
-      <div className="relative mb-4" ref={dropdownRef}>
+      {/* Search — dropdown is inside a relative container with high z-index */}
+      <div className="relative z-20 mb-5" ref={dropdownRef}>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search ingredients..."
-          className="w-full input-field rounded-xl px-6 py-4 font-body text-xl placeholder:text-sand-400"
+          className="w-full input-field rounded-none px-7 py-5 font-body text-2xl"
         />
         {suggestions.length > 0 && (
-          <div className="absolute z-20 w-full card rounded-xl mt-2 shadow-xl max-h-64 overflow-y-auto">
+          <div className="absolute left-0 right-0 mt-1 bg-dark-400 border border-white/10 max-h-72 overflow-y-auto shadow-2xl">
             {suggestions.map((s) => (
               <button
                 key={s.id}
                 onClick={() => addIngredient(s)}
-                className="w-full text-left px-6 py-3.5 hover:bg-sand-100/60 transition flex items-center justify-between font-body text-lg first:rounded-t-xl last:rounded-b-xl"
+                className="w-full text-left px-7 py-4 hover:bg-white/[0.06] transition flex items-center justify-between font-body text-xl border-b border-white/[0.04] last:border-b-0"
               >
-                <span className="text-sand-900">{s.name}</span>
-                <span className="text-sm text-sand-400 bg-sand-100 px-3 py-0.5 rounded-full">{s.category}</span>
+                <span className="text-white/90">{s.name}</span>
+                <span className="text-sm text-white/35 bg-white/[0.06] px-3 py-1">{s.category}</span>
               </button>
             ))}
           </div>
         )}
       </div>
 
+      {/* Selected ingredients */}
       {selected.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-3 mb-8">
           {selected.map((s) => (
             <span
               key={s.id}
-              className="bg-sand-100 text-sand-800 border border-sand-300 px-4 py-2 rounded-full font-body text-base font-semibold flex items-center gap-2"
+              className="bg-white/[0.06] text-white/80 border border-white/10 px-5 py-2.5 font-body text-lg flex items-center gap-2"
             >
               {s.name}
-              <button onClick={() => removeIngredient(s.id)} className="w-5 h-5 rounded-full bg-sand-300/50 hover:bg-sand-400/50 text-sand-700 flex items-center justify-center transition text-xs font-bold">&times;</button>
+              <button onClick={() => removeIngredient(s.id)} className="w-6 h-6 bg-white/10 hover:bg-white/20 text-white/60 flex items-center justify-center transition text-sm font-bold">&times;</button>
             </span>
           ))}
         </div>
       )}
 
-      <div className="mt-8">
+      {/* Button — z-10 so dropdown doesn't go behind it */}
+      <div className="relative z-10 mt-8">
         <button
           onClick={findRecipes}
           disabled={selected.length === 0 || loading}
-          className="w-full btn-primary py-4 rounded-xl font-body text-xl font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
+          className="w-full btn-primary py-5 rounded-none font-body text-sm tracking-[0.14em] uppercase disabled:opacity-30 disabled:cursor-not-allowed"
         >
           {loading ? 'Searching...' : `Find Recipes (${selected.length})`}
         </button>

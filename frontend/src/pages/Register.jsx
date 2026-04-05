@@ -22,35 +22,35 @@ export default function Register() {
   }
 
   return (
-    <div className="max-w-md mx-auto px-8 py-20 fade-in">
-      <div className="text-center mb-10">
-        <p className="font-body italic text-sand-500 text-xl mb-3">join us</p>
-        <h1 className="font-display text-5xl font-bold text-sand-900">Create Account</h1>
+    <div className="max-w-lg mx-auto px-10 py-20 fade-in">
+      <div className="text-center mb-12">
+        <p className="font-body italic text-sand-500 text-2xl mb-4">join us</p>
+        <h1 className="font-display text-6xl font-bold text-sand-900">Create Account</h1>
       </div>
-      <form onSubmit={handleSubmit} className="card rounded-2xl p-8 space-y-4">
+      <form onSubmit={handleSubmit} className="card rounded-2xl p-10 space-y-5">
         {error && (
-          <div className="bg-sand-100 border border-sand-400 text-sand-800 px-4 py-3 rounded-xl font-body text-base">{error}</div>
+          <div className="bg-sand-100 border border-sand-400 text-sand-800 px-5 py-3 rounded-xl font-body text-lg">{error}</div>
         )}
         <div>
-          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Name</label>
+          <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Name</label>
           <input type="text" value={form.name} onChange={(e) => update('name', e.target.value)} required
-            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
+            className="w-full input-field rounded-xl px-5 py-4 font-body text-xl" />
         </div>
         <div>
-          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Email</label>
+          <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Email</label>
           <input type="email" value={form.email} onChange={(e) => update('email', e.target.value)} required
-            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
+            className="w-full input-field rounded-xl px-5 py-4 font-body text-xl" />
         </div>
         <div>
-          <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Password</label>
+          <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Password</label>
           <input type="password" value={form.password} onChange={(e) => update('password', e.target.value)} required minLength={6}
-            className="w-full input-field rounded-xl px-4 py-3 font-body text-lg" />
+            className="w-full input-field rounded-xl px-5 py-4 font-body text-xl" />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-5">
           <div>
-            <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Goal</label>
+            <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Goal</label>
             <select value={form.goal} onChange={(e) => update('goal', e.target.value)}
-              className="w-full input-field rounded-xl px-4 py-3 font-body text-lg">
+              className="w-full input-field rounded-xl px-5 py-4 font-body text-xl">
               <option value="weight_loss">Weight Loss</option>
               <option value="muscle_gain">Muscle Gain</option>
               <option value="maintenance">Maintenance</option>
@@ -58,19 +58,19 @@ export default function Register() {
             </select>
           </div>
           <div>
-            <label className="block font-body text-base font-semibold text-sand-700 mb-1.5">Level</label>
+            <label className="block font-body text-lg font-semibold text-sand-700 mb-2">Level</label>
             <select value={form.level} onChange={(e) => update('level', e.target.value)}
-              className="w-full input-field rounded-xl px-4 py-3 font-body text-lg">
+              className="w-full input-field rounded-xl px-5 py-4 font-body text-xl">
               <option value="beginner">Beginner</option>
               <option value="intermediate">Intermediate</option>
               <option value="advanced">Advanced</option>
             </select>
           </div>
         </div>
-        <button type="submit" className="w-full btn-primary py-3 rounded-xl font-body text-lg font-bold">
+        <button type="submit" className="w-full btn-primary py-4 rounded-xl font-body text-xl font-bold">
           Sign Up
         </button>
-        <p className="font-body text-base text-sand-500 text-center">
+        <p className="font-body text-lg text-sand-500 text-center">
           Already have an account? <Link to="/login" className="text-sand-900 font-semibold hover:underline">Login</Link>
         </p>
       </form>
