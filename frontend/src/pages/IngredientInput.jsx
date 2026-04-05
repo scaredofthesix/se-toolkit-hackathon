@@ -62,9 +62,9 @@ export default function IngredientInput() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-10 py-24 fade-in">
-      <div className="text-center mb-16">
-        <p className="font-body italic text-white/50 text-2xl mb-4">type what you have</p>
+    <div className="max-w-3xl mx-auto px-4 sm:px-10 py-12 sm:py-24 fade-in">
+      <div className="text-center mb-10 sm:mb-16">
+        <p className="font-body italic text-white/50 text-lg sm:text-2xl mb-4">type what you have</p>
         <h1 className="font-display text-[clamp(3rem,6vw,5rem)] font-bold leading-tight">
           Your Kitchen
         </h1>
@@ -77,7 +77,7 @@ export default function IngredientInput() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search ingredients..."
-          className="w-full input-field rounded-none px-7 py-5 font-body text-2xl"
+          className="w-full input-field rounded-none px-4 sm:px-7 py-4 sm:py-5 font-body text-lg sm:text-2xl"
         />
         {suggestions.length > 0 && (
           <div className="absolute left-0 right-0 mt-1 bg-dark-400 border border-white/10 max-h-72 overflow-y-auto shadow-2xl">
@@ -85,7 +85,7 @@ export default function IngredientInput() {
               <button
                 key={s.id}
                 onClick={() => addIngredient(s)}
-                className="w-full text-left px-7 py-4 hover:bg-white/[0.06] transition flex items-center justify-between font-body text-xl border-b border-white/[0.04] last:border-b-0"
+                className="w-full text-left px-4 sm:px-7 py-3 sm:py-4 hover:bg-white/[0.06] transition flex items-center justify-between font-body text-base sm:text-xl border-b border-white/[0.04] last:border-b-0"
               >
                 <span className="text-white/90">{s.name}</span>
                 <span className="text-sm text-white/35 bg-white/[0.06] px-3 py-1">{s.category}</span>
