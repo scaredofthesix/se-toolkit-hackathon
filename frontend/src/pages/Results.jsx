@@ -83,7 +83,7 @@ export default function Results() {
                 className="card rounded-2xl overflow-hidden block"
               >
                 <img
-                  src={recipe.image_url || 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&q=80'}
+                  src={recipe.image_url || '/static/images/01_grilled_chicken_spinach_salad.jpg'}
                   alt={recipe.title}
                   className="w-full h-44 object-cover"
                 />

@@ -10,7 +10,7 @@ export default function RecipeCard({ recipe, showMatch = false }) {
     >
       <div className="relative overflow-hidden">
         <img
-          src={recipe.image_url || 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&q=80'}
+          src={recipe.image_url || '/static/images/01_grilled_chicken_spinach_salad.jpg'}
           alt={recipe.title}
           className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
         />
