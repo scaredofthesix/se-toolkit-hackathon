@@ -70,7 +70,7 @@ export default function RecipeDetail() {
       {/* Hero image */}
       <div className="relative rounded-2xl overflow-hidden mb-10">
         <img
-          src={r.image_url || 'https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80'}
+          src={r.image_url || '/static/images/01_grilled_chicken_spinach_salad.jpg'}
           alt={r.title}
           className="w-full h-96 object-cover"
         />
