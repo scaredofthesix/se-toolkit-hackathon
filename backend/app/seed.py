@@ -24,7 +24,7 @@ INGREDIENTS = [
     ("carrot", "vegetable"), ("zucchini", "vegetable"), ("mushrooms", "vegetable"),
     ("sweet potato", "vegetable"), ("avocado", "vegetable"), ("cucumber", "vegetable"),
     ("lettuce", "vegetable"), ("corn", "vegetable"), ("green beans", "vegetable"),
-    ("kale", "vegetable"), ("cauliflower", "vegetable"), ("celery", "vegetable"),
+    ("kale", "vegetable"),
     # Grains & Pasta (35-41)
     ("rice", "grain"), ("pasta", "grain"), ("bread", "grain"),
     ("tortilla", "grain"), ("oats", "grain"), ("quinoa", "grain"),
@@ -47,6 +47,8 @@ INGREDIENTS = [
     # Extra Pantry (67-70)
     ("coconut milk", "pantry"), ("peanut butter", "pantry"), ("rice vinegar", "pantry"),
     ("sesame oil", "pantry"),
+    # Extra Vegetables continued (71-72)
+    ("cauliflower", "vegetable"), ("celery", "vegetable"),
 ]
 
 
@@ -90,7 +92,7 @@ RECIPES = [
         "cook_time": 10, "difficulty": "easy", "calories": 320, "protein": 28, "carbs": 10, "fat": 20,
         "goal_tags": ["weight_loss", "healthy"],
         "image_url": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80",
-        "ingredients": [(10, 1, "can"), (29, 1, "whole"), (34, 1, "stalk"), (42, 0.5, "whole"), (15, 1, "tbsp"), (48, 1, "pinch"), (49, 1, "pinch"), (51, 0.5, "tsp")]
+        "ingredients": [(10, 1, "can"), (29, 1, "whole"), (72, 1, "stalk"), (42, 0.5, "whole"), (15, 1, "tbsp"), (48, 1, "pinch"), (49, 1, "pinch"), (51, 0.5, "tsp")]
     },
     {
         "title": "Cauliflower Fried Rice",
@@ -98,7 +100,7 @@ RECIPES = [
         "cook_time": 20, "difficulty": "easy", "calories": 250, "protein": 16, "carbs": 15, "fat": 14,
         "goal_tags": ["weight_loss", "healthy"],
         "image_url": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&q=80",
-        "ingredients": [(33, 1, "head"), (7, 2, "whole"), (25, 1, "whole"), (32, 50, "g"), (20, 2, "cloves"), (47, 2, "tbsp"), (46, 1, "tbsp")]
+        "ingredients": [(71, 1, "head"), (7, 2, "whole"), (25, 1, "whole"), (32, 50, "g"), (20, 2, "cloves"), (47, 2, "tbsp"), (46, 1, "tbsp")]
     },
     # ---- MUSCLE GAIN (high protein, high cal) ----
     {
